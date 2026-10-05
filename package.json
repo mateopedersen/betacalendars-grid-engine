@@ -1,0 +1,104 @@
+{
+  "name": "betacalendars-grid-engine",
+  "version": "1.0.0",
+  "packageManager": "pnpm@11.19.0",
+  "description": "Headless TypeScript engine for Gregorian calendar grids, civil-date arithmetic, ISO weeks, print geometry and conformance testing.",
+  "homepage": "https://www.betacalendars.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateopedersen/betacalendars-grid-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mateopedersen/betacalendars-grid-engine/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./civil": {
+      "types": "./dist/civil.d.ts",
+      "import": "./dist/civil.js",
+      "require": "./dist/index.cjs"
+    },
+    "./grid": {
+      "types": "./dist/grid.d.ts",
+      "import": "./dist/grid.js",
+      "require": "./dist/index.cjs"
+    },
+    "./week": {
+      "types": "./dist/week.d.ts",
+      "import": "./dist/week.js",
+      "require": "./dist/index.cjs"
+    },
+    "./print": {
+      "types": "./dist/print.d.ts",
+      "import": "./dist/print.js",
+      "require": "./dist/index.cjs"
+    },
+    "./validation": {
+      "types": "./dist/validation.d.ts",
+      "import": "./dist/validation.js",
+      "require": "./dist/index.cjs"
+    },
+    "./fixtures": {
+      "types": "./dist/fixtures.d.ts",
+      "import": "./dist/fixtures.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "betacal": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "sideEffects": [
+    "./dist/cli.js"
+  ],
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepack": "node scripts/build.mjs",
+    "test": "node --test",
+    "typecheck": "node scripts/typecheck.mjs",
+    "lint": "node scripts/lint.mjs",
+    "format:check": "node scripts/format-check.mjs",
+    "check": "node scripts/check.mjs",
+    "benchmark": "node benchmarks/run.mjs",
+    "pack:smoke": "node scripts/pack-smoke.mjs"
+  },
+  "keywords": [
+    "calendar",
+    "gregorian",
+    "civil-date",
+    "month-grid",
+    "calendar-grid",
+    "iso-week",
+    "typescript",
+    "print-layout",
+    "svg",
+    "conformance-testing"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.4",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.12.0",
+    "fast-check": "^4.10.2",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.9",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.0"
+  }
+}
